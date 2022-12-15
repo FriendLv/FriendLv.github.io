@@ -2,7 +2,7 @@
 <html>
 	<head>
 		
-<title>类型推断-FriendLv</title>
+<title>函数声明-FriendLv</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -289,7 +289,7 @@
             
         </ul>
         
-        <h1>类型推断</h1>
+        <h1>函数声明</h1>
         <div class="post-header-info">
             <div class="post-header-info-author">
                 
@@ -316,51 +316,17 @@
   <div id="article" class="post-content-info">
     
 
-    <h1 id="类型推断"><a href="#类型推断" class="headerlink" title="类型推断"></a>类型推断</h1><blockquote>
-<p>​	字符串</p>
+    <h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h1><blockquote>
+<p>​	两种使用可选参数及其默认值的方法</p>
 </blockquote>
-<pre><code class="typescript">let str = &#39;abc&#39;
-</code></pre>
-<p>根据字面量会推断出<code>let str:string</code>，所以给它赋值其他类型在编译时会报错</p>
-<pre><code class="typescript">str = 18
-</code></pre>
-<blockquote>
-<p>​	布尔值</p>
-</blockquote>
-<pre><code class="typescript">let state = false
-</code></pre>
-<p>根据字面量会推断出<code>let state:boolean</code>，所以给它赋值其他类型在编译时会报错</p>
-<pre><code class="typescript">state = 10
-</code></pre>
-<blockquote>
-<p>​	数组</p>
-</blockquote>
-<pre><code class="typescript">const arr = [&#39;abc&#39;,123]
-</code></pre>
-<p>根据字面量会推断出<code>let arr:(string|number)[]</code>，所以给它赋值其他类型在编译时会报错</p>
-<pre><code class="ty">arr.push(false)
-</code></pre>
-<blockquote>
-<p>​	对象</p>
-</blockquote>
-<pre><code class="typescript">const obj = &#123;
-    name: &#39;Lee&#39;,
-    age: 25,
-    child: &#123;
-        name: &#39;Julia&#39;,
-        age:1
-    &#125;
+<pre><code class="typescript">function sum (a:number, b:number, c:number = 0)&#123;
+    return a + b + c
 &#125;
 </code></pre>
-<p>推断出对象的结构</p>
-<p><code>const obj:&#123;</code></p>
-<p>​	<code>name:string,</code></p>
-<p>​	<code>age:number,</code></p>
-<p>​	<code>child:&#123;name:string,age:number&#125;</code></p>
-<p><code>&#125;</code></p>
-<p>向对象中添加<code>不存在的属性</code>或<code>错误类型的属性</code>都会报错 </p>
-<pre><code class="typescript">obj.name = 123 
-obj.lesson = &#39;java&#39;
+<pre><code class="typescript">function sum (a:number, b:number, c?:number)&#123;
+    c = c || 0
+    return a + b + c
+&#125;
 </code></pre>
 
   </div>
@@ -422,19 +388,12 @@ Fancybox.bind('[data-fancybox="fancybox-gallery-img"]', {
 
     <div class="post-paging">
     
-    <a href="/2022/12/15/%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E/">
-        <div class="post-paging-last">
-            <span>上一篇</span>
-            <p>函数声明</p>
-        </div>
-    </a>
-    
 
     
-    <a href="/2022/11/16/%E5%89%8D%E7%AB%AF%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/">
+    <a href="/2022/12/15/%E7%B1%BB%E5%9E%8B%E6%8E%A8%E6%96%AD/">
         <div class="post-paging-next">
             <span>下一篇</span>
-            <p>前端常用工具</p>
+            <p>类型推断</p>
         </div>
     </a>
     
